@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<a th:href="@{/testThymeleafView}">test ThymeleafView</a><br>
+<a th:href="@{/testForward}">test Internal resource view</a><br>
+<a th:href="@{/testRedirect}">test Redirect view</a><br>
 </body>
 </html>

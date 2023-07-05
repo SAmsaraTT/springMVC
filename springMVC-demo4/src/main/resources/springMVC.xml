@@ -28,6 +28,14 @@
     </bean>
 
     <mvc:view-controller path="/" view-name="index"></mvc:view-controller>
+    <mvc:view-controller path="/file" view-name="file"></mvc:view-controller>
 
     <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
+
+<!--文件上转解析器-->
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
+
+
 </beans>

@@ -2,15 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>add</title>
+    <title>update</title>
 </head>
 <body>
 <form th:action="@{/employee}" method="post">
-  lastName:<input type="text" name="lastName"><br>
-  email:<input type="text" name="email"><br>
-  gender:<input type="radio" name="gender" value="1">male<br>
-  <input type="radio" name="gender" value="0">female<br>
-  <input type="submit" value="add">
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="id" th:value="${employee.id}">
+  lastName:<input type="text" name="lastName" th:value="${employee.lastName}"><br>
+  email:<input type="text" name="email" th:value="${employee.email}"><br>
+  gender:<input type="radio" name="gender" value="1" th:field="${employee.gender}">male<br>
+  <input type="radio" name="gender" value="0" th:field="${employee.gender}">female<br>
+  <input type="submit" value="update">
 </form>
 </body>
 </html>

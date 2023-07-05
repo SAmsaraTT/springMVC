@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1>首页</h1>
+<a th:href="@{/hello/testRequestMapping}">test the position of RequestMapping</a><br>
+<a th:href="@{/testRequestMapping}">test value of RequestMapping /testRequestMapping</a><br>
+<a th:href="@{/test}">test the value of RequestMapping /test</a><br>
+
+<form th:action="@{/test}" method="post">
+    <input type="submit" value="test the method of RequestMapping--> post">
+</form>
+<a th:href="@{/testGetMapping}">test the value of GetMapping /testGetMapping</a><br>
+
+<form th:action="@{/testPut}" method="put">
+    <input type="submit" value="test the method of form PUT">
+</form>
+
+<a th:href="@{/testParamsAndHeaders(username='admin',password='123')}">test the params of RequestMapping</a>
+<a th:href="@{/a1a/testAnt}">test the ant style path->?</a><br>
+<a th:href="@{/a1a/testAnt}">test the ant style path->*</a><br>
+<a th:href="@{/a1a/testAnt}">test the ant style path->**</a><br>
+<a th:href="@{/testPath/1/admin}">测试路径种的占位符->/testPath</a><br>
+
 </body>
 </html>

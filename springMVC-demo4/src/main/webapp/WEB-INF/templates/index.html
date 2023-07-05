@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>index</title>
 </head>
 <body>
-$END$
+<h1>homepage</h1>
+<form th:action="@{/testRequestBody}" method="post">
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <input type="submit" value="test @RequestBody">
+</form>
+
+<form th:action="@{/testRequestEntity}" method="post">
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <input type="submit" value="test RequestEntity">
+</form>
+
+<a th:href="@{/testResponse}">test response by ServletApI</a><br>
+<a th:href="@{/testResponseBody}">test response by @ResponseBody</a><br>
+<a th:href="@{/testResponseUser}">test response User by @ResponseBody</a><br>
+<div id="app">
+    <a @click="testAxios" th:href="@{/testAxios}">springMVC cope with ajax</a>
+</div>
+
+<script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="text/javascript" th:src="@{/static/js/axios.min.js}"></script>
+
+<script type="text/javascript">
+    new Vue({
+       el:"#app",
+       methods:{
+           testAxios:function (event) {
+               axios({
+                  method:"post",
+                  url:event.target.href,
+                  params:{
+                      username:"admin",
+                      password:"123456"
+                  }
+               }).then(function (response) {
+                   alert(response.data);
+               });
+               event.preventDefault();
+           }
+       }
+    });
+</script>
 </body>
 </html>

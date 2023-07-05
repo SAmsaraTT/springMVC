@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1>index</h1>
+<a th:href="@{/testRequestByServletAPI}">store data in request scope by ServletAPI</a><br>
+<a th:href="@{/testModelAndView}">store data in request scope by ModelAndView</a><br>
+<a th:href="@{/testModel}">store data in request scope by Model</a><br>
+<a th:href="@{/testMap}">store data in request scope by Map</a><br>
+<a th:href="@{/testModelMap}">store data in request scope by ModelMap</a><br>
+<a th:href="@{/testSession}">store data in request scope by ServletAPI's session</a><br>
+<a th:href="@{/testApplication}">store data in request scope by ServletAPI's application</a><br>
 </body>
 </html>

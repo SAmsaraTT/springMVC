@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>test upload and download</title>
 </head>
 <body>
-$END$
+<a th:href="@{/testDown}">Download 1.png</a>
+<form th:action="@{/testUp}" method="post" enctype="multipart/form-data">
+    avatar: <input type="file" name="photo"><br>
+    <input type="submit" value="upload">
+</form>
 </body>
 </html>

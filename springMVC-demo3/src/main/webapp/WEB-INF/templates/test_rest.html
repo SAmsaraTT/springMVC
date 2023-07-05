@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<a th:href="@{/user}">query all users' information</a><br>
+<a th:href="@{/user/1}">query the user by id</a><br>
+<form th:action="@{/user}" method="post">
+    username: <input type="text" name="username"><br>
+    password: <input type="password" name="password"><br>
+    <input type="submit" value="add">
+</form>
+
+<form th:action="@{/user}" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    username: <input type="text" name="username"><br>
+    password: <input type="password" name="password"><br>
+    <input type="submit" value="update">
+</form>
+
+
 </body>
 </html>
